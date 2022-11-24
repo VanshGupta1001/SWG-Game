@@ -1,0 +1,27 @@
+import java.util.Random;
+import java.util.Scanner;
+public class snakewatergun {
+    public static void main(String[] args) {
+        // 0 for snake
+        // 1 for water
+        // 2 for gun
+
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter 0 for rock , 1 for paper , 2 for scissor");
+        int userinput = sc.nextInt();
+
+        Random random = new Random();
+        int computerInput = random.nextInt( 3);
+
+        if (userinput == computerInput) {
+            System.out.println("Draw");
+        } else if (userinput == 2 && computerInput == 0 || userinput == 0 &&
+                computerInput == 1 || userinput == 1 && computerInput == 2) {
+            System.out.println("You win!");
+        } else {
+            System.out.println("computer win\n ");
+        }
+        System.out.println("Computer choice : " + computerInput);
+    }
+}
